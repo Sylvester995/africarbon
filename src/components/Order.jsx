@@ -37,6 +37,11 @@ const Order = () => {
       alert('Please enter your phone number.');
       return;
     }
+     const liberianPhone = /^(\+231|00231|0)(77|88|55|33|44|66|99)\d{7}$/.test(form.phone.replace(/\s/g, ''));
+       if (!liberianPhone) {
+        alert('Please enter a valid Liberian phone number.\nExample: +231 77 123 4567 or 0770000000');
+       return;
+    }
     if (!form.area) {
       alert('Please select your delivery area.');
       return;

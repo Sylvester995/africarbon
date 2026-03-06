@@ -4,9 +4,8 @@ import { COLORS, WHATSAPP, PRODUCTS } from '../theme';
 const Products = () => {
   const [hovered, setHovered] = useState(null);
 
-  const waOrder = (product) => {
-    const msg = 'Hello AfriCarbon! I would like to order: ' + product.name + '. Please provide more details.';
-    window.open('https://wa.me/' + WHATSAPP.replace('+', '') + '?text=' + encodeURIComponent(msg), '_blank');
+  const waOrder = () => {
+    window.location.href = '/order';
   };
 
   return (
@@ -274,7 +273,7 @@ const Products = () => {
               {/* CTA */}
               <div style={{ padding: '1.5rem 2rem' }}>
                 <button
-                  onClick={() => waOrder(product)}
+                  onClick={() => waOrder()}
                   style={{
                     width:         '100%',
                     background:    hovered === product.id
